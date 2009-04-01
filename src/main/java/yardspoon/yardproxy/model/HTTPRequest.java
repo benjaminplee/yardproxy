@@ -31,8 +31,9 @@ public class HTTPRequest {
 			addStringBytesAndCRLF(buffer, fieldName + ": " + headers.get(fieldName).trim());
 		}
 		
+		addCRLF(buffer);
+		
 		if(method == HTTPMethod.POST) {
-			addCRLF(buffer);
 			addStringBytes(buffer, messageBody);
 		}
 		
