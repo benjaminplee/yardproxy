@@ -23,6 +23,7 @@ public class HTTPRequest {
 
 	public IoBuffer encode() {
 		IoBuffer buffer = IoBuffer.allocate(0, false);
+		buffer.clear();
 		
 		addStringBytesAndCRLF(buffer, method.name() + " " + absoluteURI + " HTTP/1.1");
 		
